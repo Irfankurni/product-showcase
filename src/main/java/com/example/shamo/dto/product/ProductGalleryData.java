@@ -2,13 +2,13 @@ package com.example.shamo.dto.product;
 
 public class ProductGalleryData {
 
-	private Long fileId;
+	private String fileId;
 
-	public Long getFileId() {
+	public String getFileId() {
 		return fileId;
 	}
 
-	public void setFileId(Long fileId) {
+	public void setFileId(String fileId) {
 		this.fileId = fileId;
 	}
 

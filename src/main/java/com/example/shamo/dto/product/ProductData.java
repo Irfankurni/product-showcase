@@ -6,9 +6,9 @@ import java.util.List;
 
 public class ProductData {
 
-	private Long id;
+	private String id;
 	private String productName;
-	private Long categoryId;
+	private String categoryId;
 
 	private String categoryName;
 
@@ -18,11 +18,11 @@ public class ProductData {
 
 	private List<ProductGalleryData> galleries;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -34,11 +34,11 @@ public class ProductData {
 		this.productName = productName;
 	}
 
-	public Long getCategoryId() {
+	public String getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(Long categoryId) {
+	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
 	}
 

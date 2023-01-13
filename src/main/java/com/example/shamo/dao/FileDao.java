@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class FileDao extends BaseEntityManager {
 
-	public Files findById(Long id) throws Exception {
+	public Files findById(String id) throws Exception {
 		Files file = em.find(Files.class, id);
 		return file;
 	}
@@ -17,7 +17,7 @@ public class FileDao extends BaseEntityManager {
 		return files;
 	}
 
-	public Boolean delete(Long id) throws Exception {
+	public Boolean delete(String id) throws Exception {
 		String sql = "DELETE FROM files WHERE id = :id";
 		int result = em.createNativeQuery(sql).setParameter("id", id).executeUpdate();
 		return result > 0;

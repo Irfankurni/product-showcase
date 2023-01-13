@@ -2,20 +2,20 @@ package com.example.shamo.dto.product;
 
 public class ProductListData {
 
-    private Long id;
+    private String id;
     private String productName;
-    private Long categoryId;
+    private String categoryId;
     private String categoryName;
     private float price;
     private String description;
     private String tags;
-    private Long fileId;
+    private String fileId;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -27,11 +27,11 @@ public class ProductListData {
         this.productName = productName;
     }
 
-    public Long getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -67,11 +67,11 @@ public class ProductListData {
         this.tags = tags;
     }
 
-    public Long getFileId() {
+    public String getFileId() {
         return fileId;
     }
 
-    public void setFileId(Long fileId) {
+    public void setFileId(String fileId) {
         this.fileId = fileId;
     }
 }

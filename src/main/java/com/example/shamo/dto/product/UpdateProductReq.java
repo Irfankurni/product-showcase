@@ -2,19 +2,19 @@ package com.example.shamo.dto.product;
 
 public class UpdateProductReq {
 
-    private Long id;
+    private String id;
     private String productName;
-    private Long categoryId;
+    private String categoryId;
     private Float price;
     private String description;
     private String tags;
     private Boolean isActive;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -26,11 +26,11 @@ public class UpdateProductReq {
         this.productName = productName;
     }
 
-    public Long getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 

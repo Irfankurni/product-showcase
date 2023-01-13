@@ -44,7 +44,7 @@ public class ProductService {
         List<LinkedHashMap<String, Object>> products = productDao.findAllProduct(category);
         for (LinkedHashMap<String, Object> value : products) {
             ProductListData product = new ProductListData();
-            product.setId(Long.valueOf(value.get("id").toString()));
+            product.setId(value.get("id").toString());
             product.setProductName((String) value.get("productName"));
 
             product.setCategoryName((String) value.get("category"));
@@ -53,7 +53,7 @@ public class ProductService {
             product.setDescription((String) value.get("description"));
             product.setTags((String) value.get("tags"));
             if (value.get("fileId") != null) {
-                product.setFileId(Long.valueOf(value.get("fileId").toString()));
+                product.setFileId(value.get("fileId").toString());
             }
             productData.add(product);
 
@@ -69,7 +69,7 @@ public class ProductService {
         return productDao.findAllProduct(category);
     }
 
-    public FindByIdProductRes findByIdProduct(Long id) throws Exception {
+    public FindByIdProductRes findByIdProduct(String id) throws Exception {
         Products products = productDao.findByIdProduct(id);
 
         ProductData product = new ProductData();
@@ -149,7 +149,7 @@ public class ProductService {
     }
 
     @Transactional(rollbackOn = Exception.class)
-    public DeleteRes deleteProduct(Long id) throws Exception {
+    public DeleteRes deleteProduct(String id) throws Exception {
         List<ProductGalleries> galleries = galleryDao.findByProductId(id);
         galleries.forEach(data -> {
             try {

@@ -22,12 +22,12 @@ import com.example.shamo.service.FileService;
 @RestController
 @RequestMapping("files")
 public class FileController {
-	
+
 	@Autowired
     private FileService fileService;
 
     @GetMapping("{id}")
-    public ResponseEntity<byte[]> downloadFile(@PathVariable("id") Long id) throws Exception {
+    public ResponseEntity<byte[]> downloadFile(@PathVariable("id") String id) throws Exception {
         Files file = fileService.getById(id);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=attachment." + file.getFileExtension());
@@ -35,7 +35,7 @@ public class FileController {
         byte[] fileInBytes = Base64.getDecoder().decode(file.getFileName());
         return ResponseEntity.ok().headers(httpHeaders).contentType(MediaType.APPLICATION_OCTET_STREAM).body(fileInBytes);
     }
-    
+
     @PostMapping
     public ResponseEntity<InsertRes> insert(@RequestBody InsertFileReq files) throws Exception {
     	InsertRes data = fileService.insert(files);

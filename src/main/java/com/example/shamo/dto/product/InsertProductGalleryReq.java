@@ -2,22 +2,22 @@ package com.example.shamo.dto.product;
 
 public class InsertProductGalleryReq {
 
-	private Long fileId;
-	private Long productId;
+	private String fileId;
+	private String productId;
 
-	public Long getFileId() {
+	public String getFileId() {
 		return fileId;
 	}
 
-	public void setFileId(Long fileId) {
+	public void setFileId(String fileId) {
 		this.fileId = fileId;
 	}
 
-	public Long getProductId() {
+	public String getProductId() {
 		return productId;
 	}
 
-	public void setProductId(Long productId) {
+	public void setProductId(String productId) {
 		this.productId = productId;
 	}
 

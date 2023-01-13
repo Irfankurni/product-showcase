@@ -59,7 +59,7 @@ public class ProductGalleryService {
         return res;
     }
 
-    public FindAllProductGalleriesRes findByProductId(Long productId) throws Exception {
+    public FindAllProductGalleriesRes findByProductId(String productId) throws Exception {
         List<ProductGalleryData> galleries = new ArrayList<>();
 
         List<ProductGalleries> galleryData = galleryDao.findByProductId(productId);
@@ -78,9 +78,9 @@ public class ProductGalleryService {
     }
 
     @Transactional(rollbackOn = Exception.class)
-    public DeleteRes delete(Long id) throws Exception {
+    public DeleteRes delete(String id) throws Exception {
         ProductGalleries galleries = galleryDao.findByIdGallery(id);
-        Long fileId = galleries.getFile().getId();
+        String fileId = galleries.getFile().getId();
 
         Boolean delete = galleryDao.deleteGallery(id);
         DeleteRes res = null;

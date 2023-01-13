@@ -35,27 +35,27 @@ public class ProductCategoryController {
 		FindAllProductCategoryRes data = categoryService.findAllProductCategory();
 		return new ResponseEntity<FindAllProductCategoryRes>(data, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("{id}")
-	public ResponseEntity<FindByIdProductCategoryRes> findById(@PathVariable Long id) throws Exception {
+	public ResponseEntity<FindByIdProductCategoryRes> findById(@PathVariable String id) throws Exception {
 		FindByIdProductCategoryRes data = categoryService.findByIdProductCategory(id);
 		return new ResponseEntity<FindByIdProductCategoryRes>(data, HttpStatus.OK);
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<InsertRes> insert(@RequestBody @Valid InsertProductCategoryReq req) throws Exception {
 		InsertRes data = categoryService.insert(req);
 		return new ResponseEntity<InsertRes>(data, HttpStatus.CREATED);
 	}
-	
+
 	@PutMapping
 	public ResponseEntity<UpdateRes> update(@RequestBody UpdateProductCategoryReq req) throws Exception {
 		UpdateRes data = categoryService.update(req);
 		return new ResponseEntity<UpdateRes>(data, HttpStatus.OK);
 	}
-	
+
 	@DeleteMapping("{id}")
-	public ResponseEntity<DeleteRes> delete(@PathVariable Long id) throws Exception {
+	public ResponseEntity<DeleteRes> delete(@PathVariable String id) throws Exception {
 		DeleteRes data = categoryService.delete(id);
 		return new ResponseEntity<DeleteRes>(data, HttpStatus.OK);
 	}

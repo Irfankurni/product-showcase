@@ -2,15 +2,15 @@ package com.example.shamo.dto.productcategory;
 
 public class UpdateProductCategoryReq {
 
-	private Long id;
+	private String id;
 	private String category;
 	private Boolean isActive;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

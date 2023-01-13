@@ -18,7 +18,7 @@ public class ProductGalleryController {
     private ProductGalleryService galleryService;
 
     @GetMapping("{productId}")
-    public ResponseEntity<?> findAllByProduct(@PathVariable Long productId) throws Exception {
+    public ResponseEntity<?> findAllByProduct(@PathVariable String productId) throws Exception {
         FindAllProductGalleriesRes data = galleryService.findByProductId(productId);
         return new ResponseEntity<>(data, HttpStatus.OK);
     }
@@ -30,7 +30,7 @@ public class ProductGalleryController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id) throws Exception {
+    public ResponseEntity<?> delete(@PathVariable String id) throws Exception {
         DeleteRes res = galleryService.delete(id);
         return new ResponseEntity<>(res, HttpStatus.OK);
     }

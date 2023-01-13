@@ -15,12 +15,12 @@ public class ProductGalleryDao extends BaseEntityManager {
 		return galleries;
 	}
 
-	public ProductGalleries findByIdGallery(Long id) throws Exception {
+	public ProductGalleries findByIdGallery(String id) throws Exception {
 		ProductGalleries gallery = em.find(ProductGalleries.class, id);
 		return gallery;
 	}
 
-	public ProductGalleries findByProduct(Long productId) throws Exception {
+	public ProductGalleries findByProduct(String productId) throws Exception {
 		String sql = "SELECT pg from ProductGalleries pg WHERE pg.product.id = :productId";
 		ProductGalleries gallery = null;
 
@@ -34,7 +34,7 @@ public class ProductGalleryDao extends BaseEntityManager {
 		return gallery;
 	}
 
-	public List<ProductGalleries> findByProductId(Long productId) throws Exception {
+	public List<ProductGalleries> findByProductId(String productId) throws Exception {
 		String sql = "SELECT * from product_galleries pg WHERE pg.product_id = :productId";
 		List<ProductGalleries> galleries = em.createNativeQuery(sql, ProductGalleries.class)
 				.setParameter("productId", productId)
@@ -47,13 +47,13 @@ public class ProductGalleryDao extends BaseEntityManager {
 		return productGalleries;
 	}
 
-	public Boolean deleteGallery(Long id) throws Exception {
+	public Boolean deleteGallery(String id) throws Exception {
 		String sql = "DELETE FROM product_galleries WHERE id = :id";
 		int result = em.createNativeQuery(sql).setParameter("id", id).executeUpdate();
 		return result > 0;
 	}
 
-	public Boolean deleteByProduct(Long productId) throws Exception {
+	public Boolean deleteByProduct(String productId) throws Exception {
 		String sql = "DELETE FROM product_galleries WHERE product_id = :productId";
 		int result = em.createNativeQuery(sql).setParameter("productId", productId).executeUpdate();
 		return result > 0;

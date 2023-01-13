@@ -15,7 +15,7 @@ public class FileService {
     @Autowired
     private FileDao fileDao;
 
-    public Files getById(Long id) throws Exception {
+    public Files getById(String id) throws Exception {
         Files file = fileDao.findById(id);
         return file;
     }
@@ -36,7 +36,7 @@ public class FileService {
         return res;
     }
 
-    public DeleteRes delete(Long id) throws Exception {
+    public DeleteRes delete(String id) throws Exception {
         Boolean delete = fileDao.delete(id);
         DeleteRes res = null;
         if (delete) {

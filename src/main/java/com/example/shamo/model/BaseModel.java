@@ -1,5 +1,7 @@
 package com.example.shamo.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -15,17 +17,19 @@ import javax.persistence.Version;
 public class BaseModel {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@Column(length = 36)
+	@GeneratedValue(generator = "uuid2")
+	@GenericGenerator(name = "uuid2", strategy = "uuid2")
+	private String id;
 
 	@Version
 	private Integer version;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

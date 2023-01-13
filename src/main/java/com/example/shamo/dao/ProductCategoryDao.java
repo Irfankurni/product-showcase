@@ -15,7 +15,7 @@ public class ProductCategoryDao extends BaseEntityManager {
 		return categories;
 	}
 
-	public ProductCategories findByIdCategory(Long id) throws Exception {
+	public ProductCategories findByIdCategory(String id) throws Exception {
 		ProductCategories category = em.find(ProductCategories.class, id);
 		return category;
 	}
@@ -31,7 +31,7 @@ public class ProductCategoryDao extends BaseEntityManager {
 		return updatedCategory;
 	}
 
-	public Boolean deleteCategory(Long id) throws Exception {
+	public Boolean deleteCategory(String id) throws Exception {
 		String sql = "DELETE FROM product_categories WHERE id = :id";
 		int result = em.createNativeQuery(sql).setParameter("id", id).executeUpdate();
 		return result > 0;

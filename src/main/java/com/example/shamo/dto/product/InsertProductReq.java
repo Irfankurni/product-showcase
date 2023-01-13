@@ -3,7 +3,7 @@ package com.example.shamo.dto.product;
 public class InsertProductReq {
 
 	private String productName;
-	private Long categoryId;
+	private String categoryId;
 	private Float price;
 	private String description;
 	private String tags;
@@ -16,11 +16,11 @@ public class InsertProductReq {
 		this.productName = productName;
 	}
 
-	public Long getCategoryId() {
+	public String getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(Long categoryId) {
+	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
 	}
 

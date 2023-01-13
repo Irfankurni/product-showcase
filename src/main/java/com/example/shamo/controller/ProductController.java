@@ -28,7 +28,7 @@ public class ProductController {
 	}
 
 	@GetMapping("{id}")
-	public ResponseEntity<?> findByid(@PathVariable Long id) throws Exception {
+	public ResponseEntity<?> findByid(@PathVariable String id) throws Exception {
 		FindByIdProductRes data = productService.findByIdProduct(id);
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
@@ -46,7 +46,7 @@ public class ProductController {
 	}
 
 	@DeleteMapping("{id}")
-	public ResponseEntity<?> delete(@PathVariable Long id) throws Exception {
+	public ResponseEntity<?> delete(@PathVariable String id) throws Exception {
 		DeleteRes data = productService.deleteProduct(id);
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}

@@ -2,31 +2,31 @@ package com.example.shamo.dto.productgallery;
 
 public class ProductGalleryData {
 
-    private Long id;
-    private Long productId;
-    private Long fileId;
+    private String id;
+    private String productId;
+    private String fileId;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
-    public Long getFileId() {
+    public String getFileId() {
         return fileId;
     }
 
-    public void setFileId(Long fileId) {
+    public void setFileId(String fileId) {
         this.fileId = fileId;
     }
 }

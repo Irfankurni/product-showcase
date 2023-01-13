@@ -4,14 +4,14 @@ import java.util.List;
 
 public class InsertGalleryReq {
 
-    private Long productId;
+    private String productId;
     private List<InsertGalleryData> galleries;
 
-    public Long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 

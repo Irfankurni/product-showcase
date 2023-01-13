@@ -34,7 +34,7 @@ public class ProductCategoryService {
 		return res;
 	}
 
-	public FindByIdProductCategoryRes findByIdProductCategory(Long id) throws Exception {
+	public FindByIdProductCategoryRes findByIdProductCategory(String id) throws Exception {
 		ProductCategoryData category = new ProductCategoryData();
 		ProductCategories categories = categoryDao.findByIdCategory(id);
 		category.setId(categories.getId());
@@ -81,7 +81,7 @@ public class ProductCategoryService {
 	}
 
 	@Transactional(rollbackOn = Exception.class)
-	public DeleteRes delete(Long id) throws Exception {
+	public DeleteRes delete(String id) throws Exception {
 		Boolean delete = categoryDao.deleteCategory(id);
 		DeleteRes res = null;
 		if (delete) {
