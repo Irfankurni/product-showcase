@@ -31,7 +31,7 @@ https://gist.github.com/Irfankurni/d1fc997eeb637db5544957f3e57cacdb
   PUT /product-categories
   body: 
     {
-	"id": 17
+	"id": "d6113687-fecd-446d-b419-751b0fbd22a9"
 	"category": "Slip On"
     }
 ```
@@ -52,7 +52,7 @@ https://gist.github.com/Irfankurni/d1fc997eeb637db5544957f3e57cacdb
   body: 
     {
     	"productName": "Adidas Ultra 4D 5",
-	"categoryId": "1",
+	"categoryId": "d6113687-fecd-446d-b419-751b0fbd22a9",
 	"price": "68",
     	"description": "Adidas Ultra 4D 5",
     	"tags": "running"
@@ -62,9 +62,9 @@ https://gist.github.com/Irfankurni/d1fc997eeb637db5544957f3e57cacdb
   PUT /products
   body: 
     {
-        "id": 1
+        "id": "d6113687-fecd-446d-b419-751b0fbd22a9"
     	"productName": "Adidas Ultra 4D 5",
-	"categoryId": "1",
+	"categoryId": "d6113687-fecd-446d-b419-751b0fbd22a9",
 	"price": "68",
     	"description": "Adidas Ultra 4D 5",
     	"tags": "running"
@@ -83,7 +83,7 @@ https://gist.github.com/Irfankurni/d1fc997eeb637db5544957f3e57cacdb
   POST /galleries
   body: 
     {
-	"productId": 2,
+	"productId": "d6113687-fecd-446d-b419-751b0fbd22a9",
 	"galleries": [
 			{
 				fileName: "", <-- base64 of file
