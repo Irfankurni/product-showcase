@@ -1,12 +1,26 @@
 package com.example.shamo.dao;
 
+import com.example.shamo.entitymanager.BaseEntityManager;
 import com.example.shamo.model.Files;
+import org.springframework.stereotype.Repository;
 
-public interface FileDao {
+@Repository
+public class FileDao extends BaseEntityManager {
 
-	Files findById(Long id) throws Exception;
+	public Files findById(Long id) throws Exception {
+		Files file = em.find(Files.class, id);
+		return file;
+	}
 
-	Files insert(Files files) throws Exception;
-	Boolean delete(Long id) throws Exception;
+	public Files insert(Files files) throws Exception {
+		em.persist(files);
+		return files;
+	}
+
+	public Boolean delete(Long id) throws Exception {
+		String sql = "DELETE FROM files WHERE id = :id";
+		int result = em.createNativeQuery(sql).setParameter("id", id).executeUpdate();
+		return result > 0;
+	}
 
 }

@@ -1,16 +1,51 @@
 package com.example.shamo.service;
 
+import com.example.shamo.dao.FileDao;
 import com.example.shamo.dto.DeleteRes;
 import com.example.shamo.dto.InsertRes;
+import com.example.shamo.dto.InsertResData;
 import com.example.shamo.dto.file.InsertFileReq;
 import com.example.shamo.model.Files;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface FileService {
+@Service
+public class FileService {
 
-	Files getById(Long id) throws Exception;
+    @Autowired
+    private FileDao fileDao;
 
-	InsertRes insert(InsertFileReq data) throws Exception;
+    public Files getById(Long id) throws Exception {
+        Files file = fileDao.findById(id);
+        return file;
+    }
 
-	DeleteRes delete(Long id) throws Exception;
+    public InsertRes insert(InsertFileReq data) throws Exception {
+        Files file = new Files();
+        file.setFileName(data.getFileName());
+        file.setFileExtension(data.getFileName());
+
+        Files inserted = fileDao.insert(file);
+
+        InsertResData resData = new InsertResData();
+        resData.setId(inserted.getId());
+
+        InsertRes res = new InsertRes();
+        res.setData(resData);
+        res.setMessage("Berhasil");
+        return res;
+    }
+
+    public DeleteRes delete(Long id) throws Exception {
+        Boolean delete = fileDao.delete(id);
+        DeleteRes res = null;
+        if (delete) {
+            res = new DeleteRes();
+            res.setMessage("Berhasil");
+        }
+
+        return res;
+    }
+
 
 }
