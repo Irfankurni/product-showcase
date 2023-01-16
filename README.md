@@ -86,7 +86,7 @@ https://gist.github.com/Irfankurni/d1fc997eeb637db5544957f3e57cacdb
 	"productId": "d6113687-fecd-446d-b419-751b0fbd22a9",
 	"galleries": [
 			{
-				fileName: "", <-- base64 of file
+				file: "", <-- base64 of file
 				fileExtension: "",
 			}
 		     ]
