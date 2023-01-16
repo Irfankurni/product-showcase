@@ -38,7 +38,7 @@ public class ProductGalleryService {
 
         for (int i = 0; i < data.getGalleries().size(); i++) {
             Files file = new Files();
-            file.setFileName(data.getGalleries().get(i).getFileName());
+            file.setFileName(data.getGalleries().get(i).getFile());
             file.setFileExtension(data.getGalleries().get(i).getFileExtension());
 
             Files fileRes = fileDao.insert(file);

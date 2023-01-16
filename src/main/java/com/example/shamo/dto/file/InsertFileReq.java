@@ -2,15 +2,15 @@ package com.example.shamo.dto.file;
 
 public class InsertFileReq {
 
-	private String fileName;
+	private String file;
 	private String fileExt;
 
-	public String getFileName() {
-		return fileName;
+	public String getFile() {
+		return file;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setFile(String file) {
+		this.file = file;
 	}
 
 	public String getFileExt() {

@@ -22,8 +22,8 @@ public class FileService {
 
     public InsertRes insert(InsertFileReq data) throws Exception {
         Files file = new Files();
-        file.setFileName(data.getFileName());
-        file.setFileExtension(data.getFileName());
+        file.setFileName(data.getFile());
+        file.setFileExtension(data.getFile());
 
         Files inserted = fileDao.insert(file);
 

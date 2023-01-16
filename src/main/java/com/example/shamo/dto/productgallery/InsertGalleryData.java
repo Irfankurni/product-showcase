@@ -2,15 +2,15 @@ package com.example.shamo.dto.productgallery;
 
 public class InsertGalleryData {
 
-   private String fileName;
+   private String file;
    private String fileExtension;
 
-    public String getFileName() {
-        return fileName;
+    public String getFile() {
+        return file;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setFile(String file) {
+        this.file = file;
     }
 
     public String getFileExtension() {
